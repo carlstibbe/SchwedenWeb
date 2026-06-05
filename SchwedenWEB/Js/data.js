@@ -4,7 +4,7 @@ const locations = [
     title: "🏡 Ferienhaus",
     text: "Hier ist das Haus",
     image: "../Images/Haus/Haus_Vorne_schön.jpg",
-    emoji: "🏡",
+    special: true
   },
   {
     coords: [14.457242, 58.537209],
