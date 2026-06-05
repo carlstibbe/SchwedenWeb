@@ -4,8 +4,11 @@ export function addMarkers(map, data, color) {
 
   data.forEach(loc => {
 
-    const popup = new maplibregl.Popup()
-      .setHTML(`<b>${loc.title}</b><br>${loc.text}`);
+  const popup = new maplibregl.Popup()
+    .setHTML(`
+      ${loc.image ? `<img src="${loc.image}" style="width:200px; border-radius:8px; margin-bottom:6px;"/>` : ""}
+      <b>${loc.title}</b><br>${loc.text}
+    `);
 
   const el = document.createElement("div");
     el.style.fontSize = "28px";
