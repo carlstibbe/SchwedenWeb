@@ -130,6 +130,36 @@ footer {
   line-height: 1.9;
 }
 
+.tip-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  max-width: 800px;
+  margin-top: 24px;
+}
+
+.tip-links a {
+  display: block;
+  padding: 20px;
+  background: white;
+  color: #2e7d32;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.tip-links a:hover {
+  background: #e8f5e9;
+}
+
+.tip-image {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 12px;
+  margin: 12px 0 20px;
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
