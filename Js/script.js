@@ -19,8 +19,16 @@ locationMarkers.forEach(m => m.addTo(map));
 cityMarkers.forEach((marker, i) => {
 
   marker.getElement().onclick = () => {
+    const isMobile = window.matchMedia("(max-width: 600px)").matches;
+    const mobileOffset = isMobile
+      ? [0, -map.getContainer().clientHeight * 0.25]
+      : [0, 0];
 
-    map.flyTo({ center: cities[i].coords, zoom: 12 });
+    map.flyTo({
+      center: cities[i].coords,
+      zoom: 12,
+      offset: mobileOffset
+    });
   };
 });
 
