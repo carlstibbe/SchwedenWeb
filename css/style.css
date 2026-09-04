@@ -15,11 +15,22 @@ header {
     align-items: center;
 }
 
+nav {
+    display: flex;
+    gap: 5px;
+}
+
 nav a {
     color: white;
-    margin-left: 20px;
     text-decoration: none;
     font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 .hero {
@@ -68,6 +79,13 @@ section {
 #map {
     height: 500px;
     border-radius: 12px;
+}
+
+.map-reset-control {
+  background-image: none !important;
+  font-size: 20px;
+  line-height: 29px;
+  text-align: center;
 }
 
 .map-details {

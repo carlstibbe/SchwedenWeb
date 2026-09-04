@@ -16,21 +16,3 @@ cityMarkers.forEach(m => m.addTo(map));
 detailMarkers.forEach(m => m.addTo(map));
 locationMarkers.forEach(m => m.addTo(map));
 
-cityMarkers.forEach((marker, i) => {
-
-  marker.getElement().onclick = () => {
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-
-    map.flyTo({
-      center: cities[i].coords,
-      zoom: 12
-    });
-
-    if (isMobile) {
-      map.once("moveend", () => {
-        map.panBy([0, -map.getContainer().clientHeight * 0.25], { duration: 400 });
-      });
-    }
-  };
-});
-

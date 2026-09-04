@@ -14,6 +14,19 @@ export function addMarkers(map, data, color) {
       .setLngLat(loc.coords);
 
     el.addEventListener("click", () => {
+      const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+      map.flyTo({
+        center: loc.coords,
+        zoom: 12
+      });
+
+      if (isMobile) {
+        map.once("moveend", () => {
+          map.panBy([0, -map.getContainer().clientHeight * 0.25], { duration: 400 });
+        });
+      }
+
       const details = document.getElementById("map-details");
       const content = document.getElementById("map-details-content");
 
