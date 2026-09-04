@@ -21,7 +21,7 @@ cityMarkers.forEach((marker, i) => {
   marker.getElement().onclick = () => {
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
     const mobileOffset = isMobile
-      ? [0, map.getContainer().clientHeight * 0.25]
+      ? [0, -map.getContainer().clientHeight * 0.25]
       : [0, 0];
 
     map.flyTo({
