@@ -20,15 +20,17 @@ cityMarkers.forEach((marker, i) => {
 
   marker.getElement().onclick = () => {
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    const mobileOffset = isMobile
-      ? [0, -map.getContainer().clientHeight * 0.25]
-      : [0, 0];
 
     map.flyTo({
       center: cities[i].coords,
-      zoom: 12,
-      offset: mobileOffset
+      zoom: 12
     });
+
+    if (isMobile) {
+      map.once("moveend", () => {
+        map.panBy([0, -map.getContainer().clientHeight * 0.25], { duration: 400 });
+      });
+    }
   };
 });
 
